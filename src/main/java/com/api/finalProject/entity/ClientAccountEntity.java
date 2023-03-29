@@ -5,11 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "ClientAccount")
+@Table(name = "client_account")
 public class ClientAccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +21,8 @@ public class ClientAccountEntity {
 
     @Column(name = "clientBalance")
     private BigDecimal clientBalance;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "clientAccountEntity")
+    private List<ClientAccountEntity> transaction;
 
 }
