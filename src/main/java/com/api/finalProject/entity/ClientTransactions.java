@@ -7,9 +7,9 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity
 @Getter
 @Setter
-@Entity
 @Table(name = "client_transactions")
 public class ClientTransactions {
     @Id
@@ -27,6 +27,6 @@ public class ClientTransactions {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
-    private ClientAccountEntity clientAccountEntity;
+    private ClientAccountEntity client;
 
 }

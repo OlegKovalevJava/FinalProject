@@ -22,7 +22,7 @@ public class ClientAccountEntity {
     @Column(name = "clientBalance")
     private BigDecimal clientBalance;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "clientAccountEntity")
-    private List<ClientAccountEntity> transaction;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
+    private List<ClientTransactions> transaction;
 
 }
